@@ -1,0 +1,10 @@
+<div class="mx-auto max-w-screen-xl">
+    @if(productsState.state.status()== "loading"){
+        <p>Cargando...</p>
+    }
+    <div class="grid grid-cols-[repeat(4,300px)] gap-8">
+        @for(product of productsState.state().products; track product){
+            <app-product-card [product]="product" />
+        }
+    </div>
+</div>
